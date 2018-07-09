@@ -9,7 +9,6 @@ from scipy.stats import norm
 from scipy.stats import laplace
 import matplotlib.patches as mpatches
 from scipy.stats import norm
-from print_errors import print_distr
 
 # maximal and minimal t values
 min_t = -4
