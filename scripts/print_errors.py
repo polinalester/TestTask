@@ -1,5 +1,14 @@
 def print_distr(t_crit_right, t_crit_left, t, u0, u1):
-	
+	 """Plots distribution data, critical values and error areas.
+
+    Keyword arguments:
+    t_crit_right -- right critical value
+    t_crit_left -- left critical value
+    t -- an array of t values for distributions
+    u0 -- probability density for H0
+    u1 -- probability density for H1
+    """
+
 	import matplotlib.pyplot as plt
 	import matplotlib.patches as mpatches
 
