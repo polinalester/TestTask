@@ -1,15 +1,9 @@
 import math
-
-def calculate_crit_value(alpha):
-	return math.sqrt(2*math.log((1-2*alpha)*math.sqrt(2*math.pi)/2))
-
-import matplotlib.pyplot as plt
+import pandas as pd
 import numpy as np
 from scipy.stats import norm
-from scipy.stats import laplace
-import matplotlib.patches as mpatches
-from scipy.stats import norm
 from print_errors import print_distr
+import os
 
 # maximal and minimal t values
 min_t = -4
@@ -18,17 +12,20 @@ max_t = 6
 # H0: myu = 0.01, H1: myu != 0.01
 h0 = 0.01
 
+fileDir = os.path.dirname(os.path.abspath(__file__))
+parentDir = os.path.dirname(fileDir)
+filename = parentDir + "/data/data.csv"
 # sample data
-sample_t = [0, 0, 0, 0, 0, 0.01, -0.2, -0.3, 0.1, 0.4]
+sample_t = pd.read_csv(filename)
 n = len(sample_t)
 
 # calculate sample mean
-sample_mean = np.sum(sample_t)/n
-print("Sample mean: {0}".format(sample_mean))
+sample_mean = sample_t.mean()
+print("Sample mean: {0}".format(round(sample_mean[0],3)))
 
 # calculate sample variance
-sample_variance = np.sum(pow(sample_t-sample_mean, 2))/n
-print("Sample variance: {0}".format(sample_variance))
+sample_variance = sample_t.var()
+print("Sample variance: {0}".format(round(sample_variance[0],3)))
 
 t = np.arange(min_t, max_t, 0.01)
 
