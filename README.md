@@ -1,5 +1,9 @@
 # TestTask
 
+## About:
+
+Plots type 1 and type 2 errors for two statistical hypothesis.
+
 ## How to run:
 
 ```
